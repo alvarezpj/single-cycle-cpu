@@ -1,0 +1,95 @@
+C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_3PortRegisterFile3
+-- Compiling architecture behavior of AlvarezPajaro_3PortRegisterFile3
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/display_decoder/AlvarezPajaro_hexadecimalDisplayDecoder.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/display_decoder/AlvarezPajaro_hexadecimalDisplayDecoder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_hexadecimalDisplayDecoder
+-- Compiling architecture behavior of AlvarezPajaro_hexadecimalDisplayDecoder
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/clock/AlvarezPajaro_1HzClock2.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/clock/AlvarezPajaro_1HzClock2.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_1HzClock2
+-- Compiling architecture behavior of AlvarezPajaro_1HzClock2
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_32bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_32bit2to1Multiplexer.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_32bit2to1Multiplexer
+-- Compiling architecture behavior of AlvarezPajaro_32bit2to1Multiplexer
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_control
+-- Compiling architecture behavior of AlvarezPajaro_control
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/alu_control/AlvarezPajaro_ALUcontrol.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/alu_control/AlvarezPajaro_ALUcontrol.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_ALUcontrol
+-- Compiling architecture behavior of AlvarezPajaro_ALUcontrol
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/adder_subtractor/AlvarezPajaro_32bitCarryLookaheadAdderSubtractor.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/adder_subtractor/AlvarezPajaro_32bitCarryLookaheadAdderSubtractor.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package AlvarezPajaro_AdderSubtractor
+-- Compiling entity AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
+-- Compiling architecture structure of AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/program_counter/AlvarezPajaro_programCounter.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/program_counter/AlvarezPajaro_programCounter.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_programCounter
+-- Compiling architecture structure of AlvarezPajaro_programCounter
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_128x8InstructionMemory
+-- Compiling architecture behavior of AlvarezPajaro_128x8InstructionMemory
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_5bit2to1Multiplexer
+-- Compiling architecture behavior of AlvarezPajaro_5bit2to1Multiplexer
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_256x8DataMemory
+-- Compiling architecture behavior of AlvarezPajaro_256x8DataMemory
+
+} {} {}}
