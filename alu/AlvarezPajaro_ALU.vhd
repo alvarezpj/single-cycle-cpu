@@ -73,7 +73,7 @@ architecture structure of AlvarezPajaro_ALU is
 
                     when "1101" => -- set on less than
                         if signed(X) < signed(Y) then
-                            result := (others => '1');
+                            result := X"00000001";
                         else 
                             result := (others => '0');
                         end if;

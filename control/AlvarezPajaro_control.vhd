@@ -115,7 +115,7 @@ architecture behavior of AlvarezPajaro_control is
                         REGDST <= '-';
                         ALUSRC <= '-';
                         MEMTOREG <= '-';
-                        REGWRITE <= '0';
+                        REGWRITE <= '1';
                         MEMREAD <= '0';
                         MEMWRITE <= '0';
                         BRANCH <= '0';

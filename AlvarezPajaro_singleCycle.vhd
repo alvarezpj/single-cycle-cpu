@@ -117,14 +117,14 @@ package AlvarezPajaro_singleCycle is
         );
     end component AlvarezPajaro_5bit2to1Multiplexer;
 
-    -- 32bit tri state
-    component AlvarezPajaro_32bitTriState is
+    -- 3bit wide 1:2 demultiplexer
+    component AlvarezPajaro_32bit1to2Demultiplexer is
         port(
-            signal C : in std_logic;
-            signal X : in std_logic_vector(31 downto 0);
-            signal O : out std_logic_vector(31 downto 0)
+            signal SEL : in std_logic;
+            signal I : in std_logic_vector(31 downto 0);
+            signal A, B : out std_logic_vector(31 downto 0)
         );
-    end component AlvarezPajaro_32bitTriState;
+    end component AlvarezPajaro_32bit1to2Demultiplexer;
 
     -- hexadecimal display decoder
     component AlvarezPajaro_hexadecimalDisplayDecoder is

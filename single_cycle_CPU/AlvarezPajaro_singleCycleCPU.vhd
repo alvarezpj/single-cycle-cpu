@@ -29,8 +29,9 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
     signal destination : std_logic_vector(4 downto 0);
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
     signal loadInstruction, loadData, loadMemory, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
-    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, temporalAddress1, temporalAddress2, lower, high : std_logic_vector(31 downto 0);
-    signal temporal  : signed(31 downto 0);
+    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
+    signal temporalAddress1, temporalAddress2, temporalAddress3 : std_logic_vector(31 downto 0);
+    signal temporal : signed(31 downto 0);
     signal writeAddress, returnAddress : std_logic_vector(31 downto 0) := X"00000000";
 
     begin
@@ -72,17 +73,17 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
         adder2 : AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
             port map(OP => '0', X => nextSequentialInstruction, Y => branchOffset, COUT => open, N => open, O => open, Z => open, R => branchAddress);
 
+        demux : AlvarezPajaro_32bit1to2Demultiplexer
+            port map(SEL => jumpAndLink, I => nextSequentialInstruction, A => temporalAddress1, B => returnAddress);
+
         mux4 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => branchControl, A => nextSequentialInstruction, B => branchAddress, O => temporalAddress1);
+            port map(SEL => branchControl, A => temporalAddress1, B => branchAddress, O => temporalAddress2);
 
         mux5 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jump, A => temporalAddress1, B => jumpAddress, O => temporalAddress2);
-
-        triState : AlvarezPajaro_32bitTriState
-            port map(C => jumpAndLink, X => nextSequentialInstruction, O => returnAddress);
+            port map(SEL => jump, A => temporalAddress2, B => jumpAddress, O => temporalAddress3);
 
         mux6 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jumpRegister, A => temporalAddress2, B => readData1, O => nextInstruction);
+            port map(SEL => jumpRegister, A => temporalAddress3, B => readData1, O => nextInstruction);
 
         -- seven segment display decoders
 
