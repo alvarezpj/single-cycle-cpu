@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLK'
+Slack : -156.561
+TNS   : -134927.269
+
+Type  : Slow Model Setup 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : -148.930
+TNS   : -4775.798
+
+Type  : Slow Model Setup 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -147.663
+TNS   : -13746.997
+
+Type  : Slow Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -13.823
+TNS   : -436.428
+
+Type  : Slow Model Hold 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : -4.059
+TNS   : -109.683
+
+Type  : Slow Model Hold 'CLK'
+Slack : -1.217
+TNS   : -18.757
+
+Type  : Slow Model Minimum Pulse Width 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -7.997
+TNS   : -1105.738
+
+Type  : Slow Model Minimum Pulse Width 'CLK'
+Slack : -1.380
+TNS   : -3037.380
+
+Type  : Slow Model Minimum Pulse Width 'START'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLK'
+Slack : -70.675
+TNS   : -60530.246
+
+Type  : Fast Model Setup 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : -67.301
+TNS   : -2156.052
+
+Type  : Fast Model Setup 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -66.695
+TNS   : -6202.378
+
+Type  : Fast Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -6.915
+TNS   : -226.224
+
+Type  : Fast Model Hold 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : -2.220
+TNS   : -59.028
+
+Type  : Fast Model Hold 'CLK'
+Slack : -0.540
+TNS   : -12.536
+
+Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -3.589
+TNS   : -495.282
+
+Type  : Fast Model Minimum Pulse Width 'CLK'
+Slack : -1.380
+TNS   : -3037.380
+
+Type  : Fast Model Minimum Pulse Width 'START'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|instructionMemory[0][4]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

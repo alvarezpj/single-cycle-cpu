@@ -23,7 +23,6 @@ architecture structure of AlvarezPajaro_ALU is
 
         operation : process(OPCODE, X, Y) -- may need to change
             -- variable declarations
-            variable zeroflag : std_logic;
             variable result, quotient, remainder : std_logic_vector(31 downto 0);
             variable product : std_logic_vector(63 downto 0);
 
@@ -31,67 +30,63 @@ architecture structure of AlvarezPajaro_ALU is
                 case OPCODE is
                     when "0001" => -- addition 
                         result := std_logic_vector(signed(X) + signed(Y));
-                        zeroflag := result(31);
 
                     when "0010" => -- subtraction 
                         result := std_logic_vector(signed(X) - signed(Y));
-                        zeroflag := result(31);
 
                     when "0011" => -- multiplication
                         product := std_logic_vector(signed(X) * signed(Y));
-                        zeroflag := product(63);
                         HI <= product(63 downto 32);
                         LO <= product(31 downto 0);
+                        result := product(31 downto 0);
 
                     when "0100" => -- division
                         quotient := std_logic_vector(signed(X) / signed(Y));
                         remainder := std_logic_vector(signed(X) rem signed(Y));
-                        zeroflag := quotient(31);
                         HI <= remainder;
                         LO <= quotient;
+                        result := quotient;
 
                     when "0101" => -- bitwise AND 
                         result := X and Y;
-                        zeroflag := result(31);
 
                     when "0110" => -- bitwise OR 
                         result := X or Y;
-                        zeroflag := result(31);
 
                     when "0111" => -- bitwise NOT (NOR) 
                         result := X nor Y;
-                        zeroflag := result(31);
 
                     when "1000" =>-- bitwise XOR
                         result := X xor Y;
-                        zeroflag := result(31);
 
                     when "1001" => -- shift left logical 
                         result := std_logic_vector(signed(Y) sll to_integer(unsigned(SHAMT)));
-                        zeroflag := result(31);
 
                     when "1010" =>-- shift right logical 
                         result := std_logic_vector(signed(Y) srl to_integer(unsigned(SHAMT)));
-                        zeroflag := result(31);
 
                     when "1011" => -- rotate left 
                         result := std_logic_vector(signed(Y) rol to_integer(unsigned(SHAMT)));
-                        zeroflag := result(31);
 
                     when "1100" => -- rotate right 
                         result := std_logic_vector(signed(Y) ror to_integer(unsigned(SHAMT)));
-                        zeroflag := result(31);
 
                     when "1101" => -- set on less than
-                        if unsigned(X) < unsigned(Y) then
-                            zeroflag := '1';
+                        if signed(X) < signed(Y) then
+                            result := (others => '1');
                         else 
-                            zeroflag := '0';
+                            result := (others => '0');
                         end if;
                         
                     when others => null;
                 end case;
-                Z <= zeroflag;
+
+                if result = X"00000000" then
+                    Z <= '1';
+                else
+                    Z <= '0';
+                end if;
+
                 R <= result;
         end process;
 

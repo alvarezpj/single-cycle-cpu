@@ -31,15 +31,6 @@ package AlvarezPajaro_singleCycle is
         );
     end component AlvarezPajaro_shiftRegister2;
 
-    -- 8-bit memory cell
-    component AlvarezPajaro_memoryCell is
-        port(
-            signal WREN, CLOCK, RESET : in std_logic;
-            signal DATA : in std_logic_vector(7 downto 0);
-            signal Q : out std_logic_vector(7 downto 0)
-        );
-    end component AlvarezPajaro_memoryCell;
-
     -- instruction memory
     component AlvarezPajaro_128x8InstructionMemory is  
         port(
@@ -93,8 +84,8 @@ package AlvarezPajaro_singleCycle is
     component AlvarezPajaro_control is
         port(
             signal OPCODE : in std_logic_vector(5 downto 0);
-            signal REGDST, ALUSRC, MEMTOREG, REGWRITE : out std_logic;
-            signal MEMREAD, MEMWRITE, BRANCH, JUMP : out std_logic;
+            signal REGDST, ALUSRC, MEMTOREG, REGWRITE, MEMREAD : out std_logic;
+            signal MEMWRITE, BRANCH, JUMP, JPLINK, JUMPRST : out std_logic;
             signal ALUOP : out std_logic_vector(1 downto 0)
         );
     end component AlvarezPajaro_control;
@@ -126,6 +117,15 @@ package AlvarezPajaro_singleCycle is
         );
     end component AlvarezPajaro_5bit2to1Multiplexer;
 
+    -- 32bit tri state
+    component AlvarezPajaro_32bitTriState is
+        port(
+            signal C : in std_logic;
+            signal X : in std_logic_vector(31 downto 0);
+            signal O : out std_logic_vector(31 downto 0)
+        );
+    end component AlvarezPajaro_32bitTriState;
+
     -- hexadecimal display decoder
     component AlvarezPajaro_hexadecimalDisplayDecoder is
         port(
@@ -134,4 +134,13 @@ package AlvarezPajaro_singleCycle is
         );
     end component AlvarezPajaro_hexadecimalDisplayDecoder;
 
+    -- single cycle CPU
+    component AlvarezPajaro_singleCycleCPU is  
+        port(
+            signal CLK, RESET, WREN, START, SHIFT, WRDST : in std_logic;  -- set RESET to a key
+            signal WRADDRESS : in std_logic_vector(6 downto 0);
+            signal LOAD : in std_logic_vector(31 downto 0);
+            signal SSD : out std_logic_vector(55 downto 0)
+        );
+    end component AlvarezPajaro_singleCycleCPU;
 end package AlvarezPajaro_singleCycle;

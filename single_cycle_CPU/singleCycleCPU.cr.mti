@@ -1,4 +1,12 @@
-C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd
+C:/Users/vical/Desktop/computer_organization_labs/lab8/tri_state/AlvarezPajaro_32bitTriState.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/tri_state/AlvarezPajaro_32bitTriState.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_32bitTriState
+-- Compiling architecture behavior of AlvarezPajaro_32bitTriState
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -32,13 +40,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_32bit2to1Multiplexer
 -- Compiling architecture behavior of AlvarezPajaro_32bit2to1Multiplexer
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/alu/AlvarezPajaro_ALU.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/alu/AlvarezPajaro_ALU.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity AlvarezPajaro_control
--- Compiling architecture behavior of AlvarezPajaro_control
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_ALU
+-- Compiling architecture structure of AlvarezPajaro_ALU
 
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/alu_control/AlvarezPajaro_ALUcontrol.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/alu_control/AlvarezPajaro_ALUcontrol.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

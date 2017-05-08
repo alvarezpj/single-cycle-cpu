@@ -26,8 +26,8 @@ architecture behavior of AlvarezPajaro_ALUcontrol is
                     when "01" => -- subtraction
                         OPCODE <= "0010";
 
-                    when "10" => -- bitwise or
-                        OPCODE <= "0110";
+                    when "10" => -- set on less than
+                        OPCODE <= "1101";
 
                     when "11" => -- determined by funct code
                         case FUNCT is
