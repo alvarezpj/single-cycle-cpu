@@ -3,3 +3,42 @@ K3
 13
 cModel Technology
 dC:\altera\13.0sp1
+Ealvarezpajaro_singlecyclecputest
+Z0 w1494247501
+Z1 DPx5 cs343 25 alvarezpajaro_singlecycle 0 22 ab7a:fmAaeGA5b6H?WHFB0
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\vical\Desktop\computer_organization_labs\lab8\single_cycle_CPU
+Z6 8C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd
+Z7 FC:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd
+l0
+L10
+V0M1JD95W>Y@<XzA]T:M@U0
+!s100 MkIIYRRUE7iz[e1MN34bj2
+Z8 OV;C;10.1d;51
+32
+!i10b 1
+Z9 !s108 1494247780.148000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd|
+Z11 !s107 C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Astructure
+R1
+R2
+R3
+R4
+DEx4 work 32 alvarezpajaro_singlecyclecputest 0 22 0M1JD95W>Y@<XzA]T:M@U0
+l38
+L22
+VK949KKC?f0IPED1lCHRdA0
+!s100 VWD@F>WoNoY5a3Imece_k0
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13

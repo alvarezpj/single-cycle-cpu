@@ -133,14 +133,4 @@ package AlvarezPajaro_singleCycle is
             signal DOUT : out std_logic_vector(6 downto 0)
         );
     end component AlvarezPajaro_hexadecimalDisplayDecoder;
-
-    -- single cycle CPU
-    component AlvarezPajaro_singleCycleCPU is  
-        port(
-            signal CLK, RESET, WREN, START, SHIFT, WRDST : in std_logic;  -- set RESET to a key
-            signal WRADDRESS : in std_logic_vector(6 downto 0);
-            signal LOAD : in std_logic_vector(31 downto 0);
-            signal SSD : out std_logic_vector(55 downto 0)
-        );
-    end component AlvarezPajaro_singleCycleCPU;
 end package AlvarezPajaro_singleCycle;
