@@ -23,6 +23,14 @@ package AlvarezPajaro_singleCycle is
     end component AlvarezPajaro_programCounter;    
 
     -- shift register
+    component AlvarezPajaro_shiftRegister3 is 
+        port(
+            signal SHIFT, WRDATA : in std_logic;
+            signal LOAD : in std_logic_vector(7 downto 0);
+            signal Q : out std_logic_vector(31 downto 0)
+        );
+    end component AlvarezPajaro_shiftRegister3;
+
     component AlvarezPajaro_shiftRegister2 is 
         port(
             signal SHIFT, CLK : in std_logic;
@@ -54,8 +62,8 @@ package AlvarezPajaro_singleCycle is
         port(
             signal REGWR, CLK : in std_logic;
             signal RD, RS, RT : in std_logic_vector(4 downto 0);
-            signal WRDATA, RA, LO, HI : in std_logic_vector(31 downto 0);
-            signal RDATA1, RDATA2 : out std_logic_vector(31 downto 0)
+            signal WRDATA, LO, HI : in std_logic_vector(31 downto 0);
+            signal RDATA1, RDATA2, RV : out std_logic_vector(31 downto 0)
         );
     end component AlvarezPajaro_3PortRegisterFile3;
 
@@ -116,15 +124,6 @@ package AlvarezPajaro_singleCycle is
             signal O : out std_logic_vector(4 downto 0)
         );
     end component AlvarezPajaro_5bit2to1Multiplexer;
-
-    -- 3bit wide 1:2 demultiplexer
-    component AlvarezPajaro_32bit1to2Demultiplexer is
-        port(
-            signal SEL : in std_logic;
-            signal I : in std_logic_vector(31 downto 0);
-            signal A, B : out std_logic_vector(31 downto 0)
-        );
-    end component AlvarezPajaro_32bit1to2Demultiplexer;
 
     -- hexadecimal display decoder
     component AlvarezPajaro_hexadecimalDisplayDecoder is

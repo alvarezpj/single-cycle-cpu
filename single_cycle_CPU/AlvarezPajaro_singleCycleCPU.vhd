@@ -26,13 +26,14 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
     signal operationCode : std_logic_vector(3 downto 0);
     -- other signals
     signal writeInstructionMemory, writeDataMemory : std_logic;
-    signal destination : std_logic_vector(4 downto 0);
+    signal temporal2, destination : std_logic_vector(4 downto 0);
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
     signal loadInstruction, loadData, loadMemory, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
     signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
-    signal temporalAddress1, temporalAddress2, temporalAddress3 : std_logic_vector(31 downto 0);
+    signal temporalAddress1, temporalAddress2, temporal3 : std_logic_vector(31 downto 0);
+    signal writeAddress : std_logic_vector(31 downto 0) := X"00000000";
     signal temporal : signed(31 downto 0);
-    signal writeAddress, returnAddress : std_logic_vector(31 downto 0) := X"00000000";
+
 
     begin
         -- component instantiation
@@ -43,10 +44,10 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             port map(CLK => CLK, MEMWRITE => writeInstructionMemory, RDADDRESS => instructionAddress, WRADDRESS => writeAddress, WRDATA => loadInstruction, INSTRUCTION => instruction);
 
         mux1 : AlvarezPajaro_5bit2to1Multiplexer
-            port map(SEL => registerDestination, A => instruction(20 downto 16), B => instruction(15 downto 11), O => destination);
+            port map(SEL => registerDestination, A => instruction(20 downto 16), B => instruction(15 downto 11), O => temporal2);
 
         registerFile : AlvarezPajaro_3PortRegisterFile3
-            port map(REGWR => registerWrite, CLK => CLK, RD => destination, RS => instruction(25 downto 21), RT => instruction(20 downto 16), WRDATA => toRegisterFile, RA => returnAddress, LO => lower, HI => high, RDATA1 => readData1, RDATA2 => readData2);
+            port map(REGWR => registerWrite, CLK => CLK, RD => destination, RS => instruction(25 downto 21), RT => instruction(20 downto 16), WRDATA => toRegisterFile, LO => lower, HI => high, RDATA1 => readData1, RDATA2 => readData2);
 
         mux2 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => aluSource, A => readData2, B => operand, O => source2);
@@ -59,7 +60,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
 
         -- to register file
         mux3 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => memoryToRegister, A => aluResult, B => dataOut, O => toRegisterFile);
+            port map(SEL => memoryToRegister, A => aluResult, B => dataOut, O => temporal3);
 
         control : AlvarezPajaro_control
             port map(OPCODE => instruction(31 downto 26), REGDST => registerDestination, ALUSRC => aluSource, MEMTOREG => memoryToRegister, REGWRITE => registerWrite, MEMREAD => memoryRead, MEMWRITE => memoryWrite, BRANCH => branch, JUMP => jump, JPLINK => jumpAndLink, JUMPRST => jumpRegister, ALUOP => aluOperation);
@@ -73,17 +74,20 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
         adder2 : AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
             port map(OP => '0', X => nextSequentialInstruction, Y => branchOffset, COUT => open, N => open, O => open, Z => open, R => branchAddress);
 
-        demux : AlvarezPajaro_32bit1to2Demultiplexer
-            port map(SEL => jumpAndLink, I => nextSequentialInstruction, A => temporalAddress1, B => returnAddress);
-
         mux4 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => branchControl, A => temporalAddress1, B => branchAddress, O => temporalAddress2);
+            port map(SEL => branchControl, A => nextSequentialInstruction, B => branchAddress, O => temporalAddress1);
 
         mux5 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jump, A => temporalAddress2, B => jumpAddress, O => temporalAddress3);
+            port map(SEL => jump, A => temporalAddress1, B => jumpAddress, O => temporalAddress2);
 
         mux6 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jumpRegister, A => temporalAddress3, B => readData1, O => nextInstruction);
+            port map(SEL => jumpRegister, A => temporalAddress2, B => readData1, O => nextInstruction);
+
+        mux7 : AlvarezPajaro_5bit2to1Multiplexer
+            port map(SEL => jumpAndLink, A => temporal2, B => "11101", O => destination);
+
+        mux8 : AlvarezPajaro_32bit2to1Multiplexer
+            port map(SEL => jumpAndLink, A => temporal3, B => nextSequentialInstruction, O => toRegisterFile);
 
         -- seven segment display decoders
 

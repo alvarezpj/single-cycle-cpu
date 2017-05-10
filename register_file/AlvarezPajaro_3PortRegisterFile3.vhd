@@ -9,8 +9,8 @@ entity AlvarezPajaro_3PortRegisterFile3 is
     port(
         signal REGWR, CLK : in std_logic;
         signal RD, RS, RT : in std_logic_vector(4 downto 0);
-        signal WRDATA, RA, LO, HI : in std_logic_vector(31 downto 0);
-        signal RDATA1, RDATA2 : out std_logic_vector(31 downto 0)
+        signal WRDATA, LO, HI : in std_logic_vector(31 downto 0);
+        signal RDATA1, RDATA2, RV : out std_logic_vector(31 downto 0)
     );
 end entity AlvarezPajaro_3PortRegisterFile3;
 
@@ -79,9 +79,10 @@ architecture behavior of AlvarezPajaro_3PortRegisterFile3 is
                             r(26) <= WRDATA;
                         when "11100" =>
                             r(28) <= WRDATA;
+                        when "11101" =>
+                            r(29) <= WRDATA;
                         when others => null;
                     end case;
-                    r(29) <= RA;
                     r(30) <= LO;
                     r(31) <= HI;
                 end if;
@@ -231,4 +232,5 @@ architecture behavior of AlvarezPajaro_3PortRegisterFile3 is
 
         r(0) <= X"00000000";
         r(27) <= X"000000FC";
+        RV <= r(1);
 end architecture behavior;

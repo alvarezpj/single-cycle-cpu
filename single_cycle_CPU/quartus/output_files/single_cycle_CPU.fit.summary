@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon May 08 09:25:35 2017
+Fitter Status : Successful - Wed May 10 00:32:28 2017
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : single_cycle_CPU
 Top-level Entity Name : AlvarezPajaro_singleCycleCPUTest
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 8,552 / 33,216 ( 26 % )
-    Total combinational functions : 6,995 / 33,216 ( 21 % )
+Total logic elements : 8,428 / 33,216 ( 25 % )
+    Total combinational functions : 6,941 / 33,216 ( 21 % )
     Dedicated logic registers : 3,101 / 33,216 ( 9 % )
 Total registers : 3101
-Total pins : 94 / 475 ( 20 % )
+Total pins : 80 / 475 ( 17 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 8 / 70 ( 11 % )

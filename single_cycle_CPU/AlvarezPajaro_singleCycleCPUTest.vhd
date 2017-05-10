@@ -9,11 +9,10 @@ use cs343.AlvarezPajaro_singleCycle.all;
 
 entity AlvarezPajaro_singleCycleCPUTest is  
     port(
-        signal CLK, RESET, WREN, START, SHIFT, WRDST : in std_logic;  -- set RESET to a key
+        signal CLK, RESET, WREN, START, SHIFT, WRDST, WRDATA, OS : in std_logic;  -- set RESET, SHIFT, OS, and WRDATA to a key
         signal WRADDRESS : in std_logic_vector(6 downto 0);
         signal LOAD : in std_logic_vector(7 downto 0);
         signal CLKS : out std_logic;
-        signal LWO : out std_logic_vector(15 downto 0);
         signal SSD : out std_logic_vector(55 downto 0)
     );
 end entity AlvarezPajaro_singleCycleCPUTest;
@@ -27,18 +26,19 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
     signal operationCode : std_logic_vector(3 downto 0);
     -- other signals
     signal writeInstructionMemory, writeDataMemory, clockSignal : std_logic;
-    signal destination : std_logic_vector(4 downto 0);
+    signal temporal2, destination : std_logic_vector(4 downto 0);
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
     signal loadInstruction, loadData, loadMemory, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
-    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high, toDisplay : std_logic_vector(31 downto 0);
-    signal temporalAddress1, temporalAddress2, temporalAddress3 : std_logic_vector(31 downto 0);
+    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
+    signal temporalAddress1, temporalAddress2, temporal3 : std_logic_vector(31 downto 0);
+    signal writeAddress, returnValue, displayData : std_logic_vector(31 downto 0) := X"00000000";
     signal temporal : signed(31 downto 0);
-    signal writeAddress, returnAddress : std_logic_vector(31 downto 0) := X"00000000";
+
 
     begin
         -- component instantiation
         clock : AlvarezPajaro_1HzClock2
-            port map(CLK_50MHZ => CLK, CLK_1HZ => clockSignal); 
+            port map(CLK_50MHZ => CLK, CLK_1HZ => clockSignal);
 
         shiftRegister : AlvarezPajaro_shiftRegister2
             port map(SHIFT => SHIFT, CLK => clockSignal, LOAD => LOAD, Q => loadMemory);
@@ -47,13 +47,13 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
             port map(CLK => clockSignal, RESET => RESET, A => nextInstruction, PC => instructionAddress);
 
         instructionMemory : AlvarezPajaro_128x8InstructionMemory
-            port map(RDADDRESS => instructionAddress, INSTRUCTION => instruction);
+            port map(CLK => clockSignal, MEMWRITE => writeInstructionMemory, RDADDRESS => instructionAddress, WRADDRESS => writeAddress, WRDATA => loadInstruction, INSTRUCTION => instruction);
 
         mux1 : AlvarezPajaro_5bit2to1Multiplexer
-            port map(SEL => registerDestination, A => instruction(20 downto 16), B => instruction(15 downto 11), O => destination);
+            port map(SEL => registerDestination, A => instruction(20 downto 16), B => instruction(15 downto 11), O => temporal2);
 
         registerFile : AlvarezPajaro_3PortRegisterFile3
-            port map(REGWR => registerWrite, CLK => clockSignal, RD => destination, RS => instruction(25 downto 21), RT => instruction(20 downto 16), WRDATA => toRegisterFile, RA => returnAddress, LO => lower, HI => high, RDATA1 => readData1, RDATA2 => readData2);
+            port map(REGWR => registerWrite, CLK => clockSignal, RD => destination, RS => instruction(25 downto 21), RT => instruction(20 downto 16), WRDATA => toRegisterFile, LO => lower, HI => high, RDATA1 => readData1, RDATA2 => readData2, RV => returnValue);
 
         mux2 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => aluSource, A => readData2, B => operand, O => source2);
@@ -64,9 +64,8 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
         dataMemory : AlvarezPajaro_256x8DataMemory
             port map(CLK => clockSignal, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, RDADDRESS => aluResult, WRADDRESS => writeAddress, WRDATA => loadData, DATAOUT => dataOut);
 
-        -- to register file
         mux3 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => memoryToRegister, A => aluResult, B => dataOut, O => toRegisterFile);
+            port map(SEL => memoryToRegister, A => aluResult, B => dataOut, O => temporal3);
 
         control : AlvarezPajaro_control
             port map(OPCODE => instruction(31 downto 26), REGDST => registerDestination, ALUSRC => aluSource, MEMTOREG => memoryToRegister, REGWRITE => registerWrite, MEMREAD => memoryRead, MEMWRITE => memoryWrite, BRANCH => branch, JUMP => jump, JPLINK => jumpAndLink, JUMPRST => jumpRegister, ALUOP => aluOperation);
@@ -80,43 +79,48 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
         adder2 : AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
             port map(OP => '0', X => nextSequentialInstruction, Y => branchOffset, COUT => open, N => open, O => open, Z => open, R => branchAddress);
 
-        demux : AlvarezPajaro_32bit1to2Demultiplexer
-            port map(SEL => jumpAndLink, I => nextSequentialInstruction, A => temporalAddress1, B => returnAddress);
-
         mux4 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => branchControl, A => temporalAddress1, B => branchAddress, O => temporalAddress2);
+            port map(SEL => branchControl, A => nextSequentialInstruction, B => branchAddress, O => temporalAddress1);
 
         mux5 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jump, A => temporalAddress2, B => jumpAddress, O => temporalAddress3);
+            port map(SEL => jump, A => temporalAddress1, B => jumpAddress, O => temporalAddress2);
 
         mux6 : AlvarezPajaro_32bit2to1Multiplexer
-            port map(SEL => jumpRegister, A => temporalAddress3, B => readData1, O => nextInstruction);
+            port map(SEL => jumpRegister, A => temporalAddress2, B => readData1, O => nextInstruction);
+
+        mux7 : AlvarezPajaro_5bit2to1Multiplexer
+            port map(SEL => jumpAndLink, A => temporal2, B => "11101", O => destination);
+
+        mux8 : AlvarezPajaro_32bit2to1Multiplexer
+            port map(SEL => jumpAndLink, A => temporal3, B => nextSequentialInstruction, O => toRegisterFile);
 
         -- seven segment display decoders
+        mux9 : AlvarezPajaro_32bit2to1Multiplexer
+            port map(SEL => OS, A => returnValue, B => instruction, O => displayData);
 
         decoder1 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(3 downto 0), DOUT => SSD(6 downto 0));
+            port map(DIN => displayData(3 downto 0), DOUT => SSD(6 downto 0));
 
         decoder2 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(7 downto 4), DOUT => SSD(13 downto 7));
+            port map(DIN => displayData(7 downto 4), DOUT => SSD(13 downto 7));
 
         decoder3 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(11 downto 8), DOUT => SSD(20 downto 14));
+            port map(DIN => displayData(11 downto 8), DOUT => SSD(20 downto 14));
 
         decoder4 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(15 downto 12), DOUT => SSD(27 downto 21));
+            port map(DIN => displayData(15 downto 12), DOUT => SSD(27 downto 21));
 
         decoder5 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(19 downto 16), DOUT => SSD(34 downto 28));
+            port map(DIN => displayData(19 downto 16), DOUT => SSD(34 downto 28));
 
         decoder6 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(23 downto 20), DOUT => SSD(41 downto 35));
+            port map(DIN => displayData(23 downto 20), DOUT => SSD(41 downto 35));
 
         decoder7 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(27 downto 24), DOUT => SSD(48 downto 42));
+            port map(DIN => displayData(27 downto 24), DOUT => SSD(48 downto 42));
 
         decoder8 : AlvarezPajaro_hexadecimalDisplayDecoder
-            port map(DIN => toDisplay(31 downto 28), DOUT => SSD(55 downto 49));
+            port map(DIN => displayData(31 downto 28), DOUT => SSD(55 downto 49));
 
 
         proc0 : process(START, WRDST, LOAD)
@@ -139,15 +143,6 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
                 end if;
         end process;
 
-        proc1 : process(instruction(31 downto 26))
-            begin
-                if instruction(31 downto 26) = "111111" then
-                    toDisplay <= readData1;
-                else
-                    toDisplay <= instruction;
-                end if;
-        end process;
-
         writeAddress(6 downto 0) <= WRADDRESS;
         temporal <= resize(signed(instruction(15 downto 0)), 32);
         operand <= std_logic_vector(temporal);
@@ -155,5 +150,4 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
         branchControl <= branch and zeroFlag;
         jumpAddress <= nextSequentialInstruction(31 downto 28) & instruction(25 downto 0) & "00";
         CLKS <= clockSignal;
-        LWO <= toRegisterFile(15 downto 0);
 end architecture structure;
