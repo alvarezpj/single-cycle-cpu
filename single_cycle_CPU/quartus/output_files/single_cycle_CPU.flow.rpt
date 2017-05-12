@@ -1,5 +1,5 @@
 Flow report for single_cycle_CPU
-Wed May 10 20:02:04 2017
+Fri May 12 00:37:00 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed May 10 20:00:54 2017           ;
+; Flow Status                        ; Successful - Fri May 12 00:35:40 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; single_cycle_CPU                                ;
 ; Top-level Entity Name              ; AlvarezPajaro_singleCycleCPUTest                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 8,490 / 33,216 ( 26 % )                         ;
-;     Total combinational functions  ; 6,941 / 33,216 ( 21 % )                         ;
-;     Dedicated logic registers      ; 3,101 / 33,216 ( 9 % )                          ;
-; Total registers                    ; 3101                                            ;
+; Total logic elements               ; 9,715 / 33,216 ( 29 % )                         ;
+;     Total combinational functions  ; 7,680 / 33,216 ( 23 % )                         ;
+;     Dedicated logic registers      ; 4,125 / 33,216 ( 12 % )                         ;
+; Total registers                    ; 4125                                            ;
 ; Total pins                         ; 80 / 475 ( 17 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2017 19:47:03 ;
+; Start date & time ; 05/11/2017 23:52:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; single_cycle_CPU    ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+------------------+----------------------------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value    ; Entity Name                      ; Section Id ;
 +-------------------------------------+---------------------------------------+------------------+----------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 141726673717978.149446002206528       ; --               ; --                               ; --         ;
+; COMPILER_SIGNATURE_ID               ; 141726673717978.149456112208472       ; --               ; --                               ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                              ; Auto Fit         ; --                               ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --               ; --                               ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --               ; --                               ; --         ;
@@ -94,11 +94,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:50     ; 1.0                     ; 642 MB              ; 00:01:46                           ;
-; Fitter                    ; 00:11:35     ; 1.0                     ; 775 MB              ; 00:11:08                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 459 MB              ; 00:00:10                           ;
-; TimeQuest Timing Analyzer ; 00:01:07     ; 1.0                     ; 618 MB              ; 00:01:06                           ;
-; Total                     ; 00:14:42     ; --                      ; --                  ; 00:14:10                           ;
+; Analysis & Synthesis      ; 00:02:08     ; 1.0                     ; 669 MB              ; 00:02:06                           ;
+; Fitter                    ; 00:41:01     ; 1.0                     ; 814 MB              ; 00:40:45                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 462 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:01:18     ; 1.0                     ; 636 MB              ; 00:01:14                           ;
+; Total                     ; 00:44:37     ; --                      ; --                  ; 00:44:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

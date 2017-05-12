@@ -8,7 +8,7 @@ use ieee.numeric_std.all;
 entity AlvarezPajaro_256x8DataMemory is  
     port(
         signal CLK, MEMREAD, MEMWRITE : in std_logic;
-        signal RDADDRESS, WRADDRESS, WRDATA : in std_logic_vector(31 downto 0);
+        signal ADDRESS, WRDATA : in std_logic_vector(31 downto 0);
         signal DATAOUT : out std_logic_vector(31 downto 0)
     );
 end entity AlvarezPajaro_256x8DataMemory;
@@ -20,10 +20,10 @@ architecture behavior of AlvarezPajaro_256x8DataMemory is
     
     begin
 
-        writeMem : process(CLK, WRADDRESS, MEMWRITE, WRDATA)
+        writeMem : process(CLK, ADDRESS, MEMWRITE, WRDATA)
             begin
                 if rising_edge(CLK) and MEMWRITE = '1' then
-                    case WRADDRESS(7 downto 0) is
+                    case ADDRESS(7 downto 0) is
                         when X"00" =>
                             dataMemory(0) <= WRDATA(31 downto 24);
                             dataMemory(1) <= WRDATA(23 downto 16);
@@ -414,10 +414,10 @@ architecture behavior of AlvarezPajaro_256x8DataMemory is
                 end if;
         end process;
 
-        readMem : process(CLK, RDADDRESS, MEMREAD)
+        readMem : process(CLK, ADDRESS, MEMREAD)
             begin
                 if MEMREAD = '1' then
-                    case RDADDRESS(7 downto 0) is
+                    case ADDRESS(7 downto 0) is
                         when X"00" =>
                             DATAOUT <= dataMemory(0) & dataMemory(1) & dataMemory(2) & dataMemory(3);
 

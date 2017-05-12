@@ -9,7 +9,7 @@ use cs343.AlvarezPajaro_singleCycle.all;
 
 entity AlvarezPajaro_singleCycleCPUTest is  
     port(
-        signal CLK, RESET, WREN, START, SHIFT, WRDST, WRDATA, OS : in std_logic;  -- set RESET, SHIFT, OS, and WRDATA to a key
+        signal CLK, RESET, WREN, START, WRDST, SHIFT, WRDATA, OS : in std_logic;  -- set RESET to a key
         signal WRADDRESS : in std_logic_vector(6 downto 0);
         signal LOAD : in std_logic_vector(7 downto 0);
         signal CLKS : out std_logic;
@@ -28,10 +28,9 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
     signal writeInstructionMemory, writeDataMemory, clockSignal : std_logic;
     signal temporal2, destination : std_logic_vector(4 downto 0);
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
-    signal loadInstruction, loadData, loadMemory, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
-    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
-    signal temporalAddress1, temporalAddress2, temporal3 : std_logic_vector(31 downto 0);
-    signal writeAddress, returnValue, displayData : std_logic_vector(31 downto 0) := X"00000000";
+    signal loadInstruction, loadData, dataOut, operand, toRegisterFile, branchOffset, loadMemory : std_logic_vector(31 downto 0);
+    signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high, returnValue : std_logic_vector(31 downto 0);
+    signal temporalAddress1, temporalAddress2, temporal3, writeAddress, writeReadAddress, displayData : std_logic_vector(31 downto 0);
     signal temporal : signed(31 downto 0);
 
 
@@ -62,8 +61,9 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
             port map(OPCODE => operationCode, SHAMT => instruction(10 downto 6), X => readData1, Y => source2, Z => zeroFlag, R => aluResult, LO => lower, HI => high);
 
         dataMemory : AlvarezPajaro_256x8DataMemory
-            port map(CLK => clockSignal, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, RDADDRESS => aluResult, WRADDRESS => writeAddress, WRDATA => loadData, DATAOUT => dataOut);
+            port map(CLK => clockSignal, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, ADDRESS => writeReadAddress, WRDATA => loadData, DATAOUT => dataOut);
 
+        -- to register file
         mux3 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => memoryToRegister, A => aluResult, B => dataOut, O => temporal3);
 
@@ -123,12 +123,14 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
             port map(DIN => displayData(31 downto 28), DOUT => SSD(55 downto 49));
 
 
-        proc0 : process(START, WRDST, LOAD)
+        proc0 : process(START, WRDST, LOAD, WRADDRESS, aluResult)
             begin
                 if START = '0' then 
                     offset <= X"00000000";
-                    loadInstruction <= loadMemory;
+                    writeAddress <= std_logic_vector(resize(unsigned(WRADDRESS), 32));
+                    writeReadAddress <= std_logic_vector(resize(unsigned(WRADDRESS), 32));
                     loadData <= loadMemory;
+                    loadInstruction <= loadMemory;
                     if WRDST = '0' then  -- load data to instruction memory
                         writeInstructionMemory <= WREN;
                         writeDataMemory <= '0';
@@ -138,12 +140,13 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
                     end if;
                 elsif START = '1' then   -- start execution
                     offset <= X"00000004";
-                    loadData <= readData2;
                     writeDataMemory <= memoryWrite;
+                    loadData <= readData2;
+                    writeReadAddress <= aluResult;
+                    writeInstructionMemory <= '0';
                 end if;
         end process;
 
-        writeAddress(6 downto 0) <= WRADDRESS;
         temporal <= resize(signed(instruction(15 downto 0)), 32);
         operand <= std_logic_vector(temporal);
         branchOffset <= std_logic_vector(shift_left(temporal, 2));

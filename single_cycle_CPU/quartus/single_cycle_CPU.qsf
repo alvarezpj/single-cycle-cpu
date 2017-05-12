@@ -146,8 +146,11 @@ set_location_assignment PIN_AE15 -to LWO[13]
 set_location_assignment PIN_AF13 -to LWO[14]
 set_location_assignment PIN_AE13 -to LWO[15]
 set_location_assignment PIN_N23 -to OS
-set_global_assignment -name VHDL_FILE ../../shift_register/AlvarezPajaro_shiftRegister2.vhd
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
 set_global_assignment -name VHDL_FILE ../AlvarezPajaro_singleCycleCPUTest.vhd
+set_global_assignment -name VHDL_FILE ../../shift_register/AlvarezPajaro_shiftRegister2.vhd
 set_global_assignment -name VHDL_FILE ../../shift_register/AlvarezPajaro_shiftRegister3.vhd
 set_global_assignment -name VHDL_FILE ../../demultiplexer/AlvarezPajaro_32bit1to2Demultiplexer.vhd
 set_global_assignment -name VHDL_FILE ../../../lab4/fullAdders/fullAdderGP/AlvarezPajaro_fullAdderGP.vhd
@@ -166,7 +169,4 @@ set_global_assignment -name VHDL_FILE ../../program_counter/AlvarezPajaro_progra
 set_global_assignment -name VHDL_FILE ../../register_file/AlvarezPajaro_3PortRegisterFile3.vhd
 set_global_assignment -name VHDL_FILE ../AlvarezPajaro_singleCycleCPU.vhd
 set_global_assignment -name VHDL_FILE ../../AlvarezPajaro_singleCycle.vhd
-set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
-set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
-set_global_assignment -name FITTER_EFFORT "FAST FIT"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

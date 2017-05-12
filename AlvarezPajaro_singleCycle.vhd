@@ -44,7 +44,7 @@ package AlvarezPajaro_singleCycle is
     component AlvarezPajaro_256x8DataMemory is  
         port(
             signal CLK, MEMREAD, MEMWRITE : in std_logic;
-            signal RDADDRESS, WRADDRESS, WRDATA : in std_logic_vector(31 downto 0);
+            signal ADDRESS, WRDATA : in std_logic_vector(31 downto 0);
             signal DATAOUT : out std_logic_vector(31 downto 0)
         );
     end component AlvarezPajaro_256x8DataMemory;

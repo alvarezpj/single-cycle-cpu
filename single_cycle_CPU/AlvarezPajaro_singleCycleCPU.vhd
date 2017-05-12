@@ -29,7 +29,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
     signal loadInstruction, loadData, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
     signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
-    signal temporalAddress1, temporalAddress2, temporal3, writeAddress : std_logic_vector(31 downto 0);
+    signal temporalAddress1, temporalAddress2, temporal3, writeAddress, writeReadAddress : std_logic_vector(31 downto 0);
     signal temporal : signed(31 downto 0);
 
 
@@ -54,7 +54,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             port map(OPCODE => operationCode, SHAMT => instruction(10 downto 6), X => readData1, Y => source2, Z => zeroFlag, R => aluResult, LO => lower, HI => high);
 
         dataMemory : AlvarezPajaro_256x8DataMemory
-            port map(CLK => CLK, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, RDADDRESS => aluResult, WRADDRESS => aluResult, WRDATA => loadData, DATAOUT => dataOut);
+            port map(CLK => CLK, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, ADDRESS => writeReadAddress, WRDATA => loadData, DATAOUT => dataOut);
 
         -- to register file
         mux3 : AlvarezPajaro_32bit2to1Multiplexer
@@ -114,13 +114,14 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             port map(DIN => instruction(31 downto 28), DOUT => SSD(55 downto 49));
 
 
-        proc0 : process(START, WRDST, LOAD)
+        proc0 : process(START, WRDST, LOAD, WRADDRESS, aluResult)
             begin
                 if START = '0' then 
                     offset <= X"00000000";
                     writeAddress <= std_logic_vector(resize(unsigned(WRADDRESS), 32));
-                    loadInstruction <= LOAD;
+                    writeReadAddress <= std_logic_vector(resize(unsigned(WRADDRESS), 32));
                     loadData <= LOAD;
+                    loadInstruction <= LOAD;
                     if WRDST = '0' then  -- load data to instruction memory
                         writeInstructionMemory <= WREN;
                         writeDataMemory <= '0';
@@ -130,9 +131,9 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
                     end if;
                 elsif START = '1' then   -- start execution
                     offset <= X"00000004";
-                    --writeAddress <= aluResult;
-                    loadData <= readData2;
                     writeDataMemory <= memoryWrite;
+                    loadData <= readData2;
+                    writeReadAddress <= aluResult;
                     writeInstructionMemory <= '0';
                 end if;
         end process;
