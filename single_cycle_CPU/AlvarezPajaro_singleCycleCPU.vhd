@@ -9,7 +9,7 @@ use cs343.AlvarezPajaro_singleCycle.all;
 
 entity AlvarezPajaro_singleCycleCPU is  
     port(
-        signal CLK, RESET, WREN, START, WRDST : in std_logic;  -- set RESET to a key
+        signal CLK, RESET, WREN, START, WRDST : in std_logic;  
         signal WRADDRESS : in std_logic_vector(6 downto 0);
         signal LOAD : in std_logic_vector(31 downto 0);
         signal SSD : out std_logic_vector(55 downto 0)
@@ -66,11 +66,11 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
         aluControl : AlvarezPajaro_ALUcontrol
             port map(ALUOP => aluOperation, FUNCT => instruction(5 downto 0), OPCODE => operationCode);
 
-        adder1 : AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
-            port map(OP => '0', X => instructionAddress, Y => offset, COUT => open, N => open, O => open, Z => open, R => nextSequentialInstruction);
+        adder1 : AlvarezPajaro_32bitAdder
+            port map(X => instructionAddress, Y => offset, SUM => nextSequentialInstruction);
 
-        adder2 : AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
-            port map(OP => '0', X => nextSequentialInstruction, Y => branchOffset, COUT => open, N => open, O => open, Z => open, R => branchAddress);
+        adder2 : AlvarezPajaro_32bitAdder
+            port map(X => nextSequentialInstruction, Y => branchOffset, SUM => branchAddress);
 
         mux4 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => branchControl, A => nextSequentialInstruction, B => branchAddress, O => temporalAddress1);

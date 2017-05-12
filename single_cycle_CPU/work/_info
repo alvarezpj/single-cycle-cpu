@@ -4,8 +4,8 @@ K3
 cModel Technology
 dC:\altera\13.0sp1
 Ealvarezpajaro_singlecyclecputest
-Z0 w1494560933
-Z1 DPx5 cs343 25 alvarezpajaro_singlecycle 0 22 J;B>J<o6AaXh8[mzkF@HX1
+Z0 w1494625408
+Z1 DPx5 cs343 25 alvarezpajaro_singlecycle 0 22 QFcEkk_G3N45]Ca<UWoX:1
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
@@ -19,7 +19,7 @@ VEQn<GbzOAh_:?VcfFmEml0
 Z8 OV;C;10.1d;51
 32
 !i10b 1
-Z9 !s108 1494560954.916000
+Z9 !s108 1494625428.977000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd|
 Z11 !s107 C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd|
 Z12 o-work work -2002 -explicit -O0
@@ -32,8 +32,8 @@ R4
 Z14 DEx4 work 32 alvarezpajaro_singlecyclecputest 0 22 EQn<GbzOAh_:?VcfFmEml0
 l37
 L21
-Z15 VSP;k_>V8;>X9P[jBhN03;1
-Z16 !s100 idTBFlLe0hVoE^Q`=c_6^3
+Z15 V=g=O=:QRV1>og`WUW:LNN0
+Z16 !s100 YZ2djkYB1A0QLo[CZe3=B1
 R8
 32
 !i10b 1

@@ -1,11 +1,4 @@
-C:/Users/vical/Desktop/computer_organization_labs/lab8/AlvarezPajaro_singleCycle.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/AlvarezPajaro_singleCycle.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling package AlvarezPajaro_singleCycle
-
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd
+C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/register_file/AlvarezPajaro_3PortRegisterFile3.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -57,6 +50,15 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_control
 -- Compiling architecture behavior of AlvarezPajaro_control
 
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/adder/AlvarezPajaro_32bitAdder.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/adder/AlvarezPajaro_32bitAdder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity AlvarezPajaro_32bitAdder
+-- Compiling architecture behavior of AlvarezPajaro_32bitAdder
+
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/alu/AlvarezPajaro_ALU.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/alu/AlvarezPajaro_ALU.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -74,16 +76,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_ALUcontrol
 -- Compiling architecture behavior of AlvarezPajaro_ALUcontrol
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/adder_subtractor/AlvarezPajaro_32bitCarryLookaheadAdderSubtractor.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/adder_subtractor/AlvarezPajaro_32bitCarryLookaheadAdderSubtractor.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package AlvarezPajaro_AdderSubtractor
--- Compiling entity AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
--- Compiling architecture structure of AlvarezPajaro_32bitCarrylookaheadAdderSubtractor
-
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/program_counter/AlvarezPajaro_programCounter.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/program_counter/AlvarezPajaro_programCounter.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -91,15 +83,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity AlvarezPajaro_programCounter
 -- Compiling architecture structure of AlvarezPajaro_programCounter
-
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity AlvarezPajaro_128x8InstructionMemory
--- Compiling architecture behavior of AlvarezPajaro_128x8InstructionMemory
 
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -109,15 +92,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_5bit2to1Multiplexer
 -- Compiling architecture behavior of AlvarezPajaro_5bit2to1Multiplexer
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd {1 {vcom -work work -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Loading package AlvarezPajaro_singleCycle
--- Compiling entity AlvarezPajaro_singleCycleCPUTest
--- Compiling architecture structure of AlvarezPajaro_singleCycleCPUTest
+-- Compiling entity AlvarezPajaro_128x8InstructionMemory
+-- Compiling architecture behavior of AlvarezPajaro_128x8InstructionMemory
 
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

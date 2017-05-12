@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="single_cycle_CPU">
-		<CBX_INST_ENTRY INSTANCE_NAME="|AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_48m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_mult:Mult0" CBX_FILE_NAME="mult_i1t.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
