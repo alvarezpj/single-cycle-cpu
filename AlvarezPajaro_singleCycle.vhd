@@ -23,14 +23,6 @@ package AlvarezPajaro_singleCycle is
     end component AlvarezPajaro_programCounter;    
 
     -- shift register
-    component AlvarezPajaro_shiftRegister3 is 
-        port(
-            signal SHIFT, WRDATA : in std_logic;
-            signal LOAD : in std_logic_vector(7 downto 0);
-            signal Q : out std_logic_vector(31 downto 0)
-        );
-    end component AlvarezPajaro_shiftRegister3;
-
     component AlvarezPajaro_shiftRegister2 is 
         port(
             signal SHIFT, CLK : in std_logic;

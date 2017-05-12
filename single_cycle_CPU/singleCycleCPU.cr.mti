@@ -31,14 +31,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_1HzClock2
 -- Compiling architecture behavior of AlvarezPajaro_1HzClock2
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/shift_register/AlvarezPajaro_shiftRegister3.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/shift_register/AlvarezPajaro_shiftRegister3.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity AlvarezPajaro_shiftRegister3
--- Compiling architecture behavior of AlvarezPajaro_shiftRegister3
-
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_32bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_32bit2to1Multiplexer.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -46,16 +38,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 -- Compiling entity AlvarezPajaro_32bit2to1Multiplexer
 -- Compiling architecture behavior of AlvarezPajaro_32bit2to1Multiplexer
-
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package AlvarezPajaro_singleCycle
--- Compiling entity AlvarezPajaro_singleCycleCPU
--- Compiling architecture structure of AlvarezPajaro_singleCycleCPU
 
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

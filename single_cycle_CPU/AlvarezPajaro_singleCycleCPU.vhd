@@ -9,10 +9,9 @@ use cs343.AlvarezPajaro_singleCycle.all;
 
 entity AlvarezPajaro_singleCycleCPU is  
     port(
-        signal CLK, RESET, WREN, START, SHIFT, WRDST : in std_logic;  -- set RESET to a key
+        signal CLK, RESET, WREN, START, WRDST : in std_logic;  -- set RESET to a key
         signal WRADDRESS : in std_logic_vector(6 downto 0);
         signal LOAD : in std_logic_vector(31 downto 0);
-        --signal CLKS : out std_logic;
         signal SSD : out std_logic_vector(55 downto 0)
     );
 end entity AlvarezPajaro_singleCycleCPU;
@@ -28,10 +27,9 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
     signal writeInstructionMemory, writeDataMemory : std_logic;
     signal temporal2, destination : std_logic_vector(4 downto 0);
     signal instruction, readData1, readData2, aluResult, offset, instructionAddress, nextInstruction : std_logic_vector(31 downto 0); 
-    signal loadInstruction, loadData, loadMemory, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
+    signal loadInstruction, loadData, dataOut, operand, toRegisterFile, branchOffset : std_logic_vector(31 downto 0);
     signal nextSequentialInstruction, branchAddress, source2, jumpAddress, lower, high : std_logic_vector(31 downto 0);
-    signal temporalAddress1, temporalAddress2, temporal3 : std_logic_vector(31 downto 0);
-    signal writeAddress : std_logic_vector(31 downto 0) := X"00000000";
+    signal temporalAddress1, temporalAddress2, temporal3, writeAddress : std_logic_vector(31 downto 0);
     signal temporal : signed(31 downto 0);
 
 
@@ -56,7 +54,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             port map(OPCODE => operationCode, SHAMT => instruction(10 downto 6), X => readData1, Y => source2, Z => zeroFlag, R => aluResult, LO => lower, HI => high);
 
         dataMemory : AlvarezPajaro_256x8DataMemory
-            port map(CLK => CLK, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, RDADDRESS => aluResult, WRADDRESS => writeAddress, WRDATA => loadData, DATAOUT => dataOut);
+            port map(CLK => CLK, MEMREAD => memoryRead, MEMWRITE => writeDataMemory, RDADDRESS => aluResult, WRADDRESS => aluResult, WRDATA => loadData, DATAOUT => dataOut);
 
         -- to register file
         mux3 : AlvarezPajaro_32bit2to1Multiplexer
@@ -84,7 +82,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             port map(SEL => jumpRegister, A => temporalAddress2, B => readData1, O => nextInstruction);
 
         mux7 : AlvarezPajaro_5bit2to1Multiplexer
-            port map(SEL => jumpAndLink, A => temporal2, B => "11101", O => destination);
+            port map(SEL => jumpAndLink, A => temporal2, B => "11111", O => destination);
 
         mux8 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => jumpAndLink, A => temporal3, B => nextSequentialInstruction, O => toRegisterFile);
@@ -120,6 +118,7 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
             begin
                 if START = '0' then 
                     offset <= X"00000000";
+                    writeAddress <= std_logic_vector(resize(unsigned(WRADDRESS), 32));
                     loadInstruction <= LOAD;
                     loadData <= LOAD;
                     if WRDST = '0' then  -- load data to instruction memory
@@ -131,12 +130,13 @@ architecture structure of AlvarezPajaro_singleCycleCPU is
                     end if;
                 elsif START = '1' then   -- start execution
                     offset <= X"00000004";
+                    --writeAddress <= aluResult;
                     loadData <= readData2;
                     writeDataMemory <= memoryWrite;
+                    writeInstructionMemory <= '0';
                 end if;
         end process;
 
-        writeAddress(6 downto 0) <= WRADDRESS;
         temporal <= resize(signed(instruction(15 downto 0)), 32);
         operand <= std_logic_vector(temporal);
         branchOffset <= std_logic_vector(shift_left(temporal, 2));

@@ -89,7 +89,7 @@ architecture structure of AlvarezPajaro_singleCycleCPUTest is
             port map(SEL => jumpRegister, A => temporalAddress2, B => readData1, O => nextInstruction);
 
         mux7 : AlvarezPajaro_5bit2to1Multiplexer
-            port map(SEL => jumpAndLink, A => temporal2, B => "11101", O => destination);
+            port map(SEL => jumpAndLink, A => temporal2, B => "11111", O => destination);
 
         mux8 : AlvarezPajaro_32bit2to1Multiplexer
             port map(SEL => jumpAndLink, A => temporal3, B => nextSequentialInstruction, O => toRegisterFile);

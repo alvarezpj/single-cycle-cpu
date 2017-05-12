@@ -77,14 +77,14 @@ architecture behavior of AlvarezPajaro_3PortRegisterFile3 is
                             r(25) <= WRDATA;
                         when "11010" =>
                             r(26) <= WRDATA;
-                        when "11100" =>
-                            r(28) <= WRDATA;
-                        when "11101" =>
-                            r(29) <= WRDATA;
+                        when "11110" =>
+                            r(30) <= WRDATA;
+                        when "11111" =>    -- return address register
+                            r(31) <= WRDATA;
                         when others => null;
                     end case;
-                    r(30) <= LO;
-                    r(31) <= HI;
+                    r(27) <= LO;
+                    r(28) <= HI;
                 end if;
         end process;
 
@@ -230,7 +230,7 @@ architecture behavior of AlvarezPajaro_3PortRegisterFile3 is
                 end case;
         end process;
 
-        r(0) <= X"00000000";
-        r(27) <= X"000000FC";
+        r(0) <= X"00000000";   -- zero register
+        r(29) <= X"000000FC";  -- stack pointer
         RV <= r(1);
 end architecture behavior;

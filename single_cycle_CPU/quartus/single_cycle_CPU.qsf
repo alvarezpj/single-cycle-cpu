@@ -166,4 +166,7 @@ set_global_assignment -name VHDL_FILE ../../program_counter/AlvarezPajaro_progra
 set_global_assignment -name VHDL_FILE ../../register_file/AlvarezPajaro_3PortRegisterFile3.vhd
 set_global_assignment -name VHDL_FILE ../AlvarezPajaro_singleCycleCPU.vhd
 set_global_assignment -name VHDL_FILE ../../AlvarezPajaro_singleCycle.vhd
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
