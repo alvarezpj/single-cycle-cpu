@@ -35,7 +35,8 @@ package AlvarezPajaro_singleCycle is
     component AlvarezPajaro_128x8InstructionMemory is  
         port(
             signal CLK, MEMWRITE : in std_logic;
-            signal RDADDRESS, WRADDRESS, WRDATA : in std_logic_vector(31 downto 0);
+            signal WRADDRESS : in std_logic_vector(6 downto 0);
+            signal RDADDRESS, WRDATA : in std_logic_vector(31 downto 0);
             signal INSTRUCTION : out std_logic_vector(31 downto 0)
         );
     end component AlvarezPajaro_128x8InstructionMemory;

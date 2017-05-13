@@ -32,7 +32,14 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_32bit2to1Multiplexer
 -- Compiling architecture behavior of AlvarezPajaro_32bit2to1Multiplexer
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycle.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycle.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package AlvarezPajaro_singleCycle
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd {0 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -41,8 +48,11 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package AlvarezPajaro_singleCycle
 -- Compiling entity AlvarezPajaro_singleCycleCPU
 -- Compiling architecture structure of AlvarezPajaro_singleCycleCPU
+** Error: C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd(42): (vcom-1272) Length of formal "WRADDRESS" is 7; length of actual is 32.
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd
+** Error: C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPU.vhd(146): VHDL Compiler exiting
+
+} {10.0 11.0 12.0 13.0} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/control/AlvarezPajaro_control.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -84,14 +94,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity AlvarezPajaro_programCounter
 -- Compiling architecture structure of AlvarezPajaro_programCounter
 
-} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity AlvarezPajaro_5bit2to1Multiplexer
--- Compiling architecture behavior of AlvarezPajaro_5bit2to1Multiplexer
-
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/instruction_memory/AlvarezPajaro_128x8InstructionMemory.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -100,6 +102,24 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package NUMERIC_STD
 -- Compiling entity AlvarezPajaro_128x8InstructionMemory
 -- Compiling architecture behavior of AlvarezPajaro_128x8InstructionMemory
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/multiplexer/AlvarezPajaro_5bit2to1Multiplexer.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AlvarezPajaro_5bit2to1Multiplexer
+-- Compiling architecture behavior of AlvarezPajaro_5bit2to1Multiplexer
+
+} {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd {1 {vcom -work work -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/single_cycle_CPU/AlvarezPajaro_singleCycleCPUTest.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package AlvarezPajaro_singleCycle
+-- Compiling entity AlvarezPajaro_singleCycleCPUTest
+-- Compiling architecture structure of AlvarezPajaro_singleCycleCPUTest
 
 } {} {}} C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd {1 {vcom -work cs343 -2002 -explicit C:/Users/vical/Desktop/computer_organization_labs/lab8/data_memory/AlvarezPajaro_256x8DataMemory.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

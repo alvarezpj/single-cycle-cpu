@@ -1,5 +1,5 @@
 Flow report for SingleCycleCPU
-Fri May 12 18:16:23 2017
+Fri May 12 20:42:54 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri May 12 18:15:31 2017           ;
+; Flow Status                        ; Successful - Fri May 12 20:41:55 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; SingleCycleCPU                                  ;
 ; Top-level Entity Name              ; AlvarezPajaro_singleCycleCPUTest                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 9,679 / 33,216 ( 29 % )                         ;
-;     Total combinational functions  ; 7,625 / 33,216 ( 23 % )                         ;
+; Total logic elements               ; 9,671 / 33,216 ( 29 % )                         ;
+;     Total combinational functions  ; 7,588 / 33,216 ( 23 % )                         ;
 ;     Dedicated logic registers      ; 4,125 / 33,216 ( 12 % )                         ;
 ; Total registers                    ; 4125                                            ;
 ; Total pins                         ; 80 / 475 ( 17 % )                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/12/2017 17:48:49 ;
+; Start date & time ; 05/12/2017 20:25:40 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SingleCycleCPU      ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------+----------------+----------------------------------+------------+
 ; Assignment Name                     ; Value                            ; Default Value  ; Entity Name                      ; Section Id ;
 +-------------------------------------+----------------------------------+----------------+----------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 141726673717978.149462572808568  ; --             ; --                               ; --         ;
+; COMPILER_SIGNATURE_ID               ; 141726673717978.149463513505584  ; --             ; --                               ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                               ; --             ; --                               ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                ; --             ; --                               ; --         ;
 ; PARTITION_COLOR                     ; 16764057                         ; --             ; AlvarezPajaro_singleCycleCPUTest ; Top        ;
@@ -91,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:19     ; 1.0                     ; 681 MB              ; 00:02:17                           ;
-; Fitter                    ; 00:23:52     ; 1.0                     ; 797 MB              ; 00:23:32                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 463 MB              ; 00:00:10                           ;
-; TimeQuest Timing Analyzer ; 00:00:50     ; 1.0                     ; 618 MB              ; 00:00:49                           ;
-; Total                     ; 00:27:11     ; --                      ; --                  ; 00:26:48                           ;
+; Analysis & Synthesis      ; 00:01:59     ; 1.0                     ; 661 MB              ; 00:01:58                           ;
+; Fitter                    ; 00:13:55     ; 1.0                     ; 796 MB              ; 00:13:43                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 470 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:55     ; 1.0                     ; 615 MB              ; 00:00:55                           ;
+; Total                     ; 00:16:59     ; --                      ; --                  ; 00:16:46                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

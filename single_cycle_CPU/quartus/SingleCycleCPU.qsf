@@ -140,7 +140,7 @@ set_location_assignment PIN_L6 -to SSD[52]
 set_location_assignment PIN_L7 -to SSD[53]
 set_location_assignment PIN_P9 -to SSD[54]
 set_location_assignment PIN_N9 -to SSD[55]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

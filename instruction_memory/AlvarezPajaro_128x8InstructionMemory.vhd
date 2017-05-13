@@ -8,7 +8,8 @@ use ieee.numeric_std.all;
 entity AlvarezPajaro_128x8InstructionMemory is  
     port(
         signal CLK, MEMWRITE : in std_logic;
-        signal RDADDRESS, WRADDRESS, WRDATA : in std_logic_vector(31 downto 0);
+        signal WRADDRESS : in std_logic_vector(6 downto 0);
+        signal RDADDRESS, WRDATA : in std_logic_vector(31 downto 0);
         signal INSTRUCTION : out std_logic_vector(31 downto 0)
     );
 end entity AlvarezPajaro_128x8InstructionMemory;
@@ -23,7 +24,7 @@ architecture behavior of AlvarezPajaro_128x8InstructionMemory is
         writeMem : process(CLK, WRADDRESS, MEMWRITE, WRDATA)
             begin
                 if rising_edge(CLK) and MEMWRITE = '1' then
-                    case WRADDRESS(6 downto 0) is
+                    case WRADDRESS is
                         when "0000000" =>
                             instructionMemory(0) <= WRDATA(31 downto 24);
                             instructionMemory(1) <= WRDATA(23 downto 16);

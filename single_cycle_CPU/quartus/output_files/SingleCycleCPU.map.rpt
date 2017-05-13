@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SingleCycleCPU
-Fri May 12 17:51:13 2017
+Fri May 12 20:27:37 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -22,13 +22,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  14. Parameter Settings for Inferred Entity Instance: AlvarezPajaro_ALU:alu|lpm_mult:Mult0
  15. Parameter Settings for Inferred Entity Instance: AlvarezPajaro_ALU:alu|lpm_divide:Mod0
  16. lpm_mult Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "AlvarezPajaro_5bit2to1Multiplexer:mux7"
- 18. Port Connectivity Checks: "AlvarezPajaro_32bit2to1Multiplexer:mux5"
- 19. Port Connectivity Checks: "AlvarezPajaro_32bitAdder:adder2"
- 20. Port Connectivity Checks: "AlvarezPajaro_32bitAdder:adder1"
- 21. Port Connectivity Checks: "AlvarezPajaro_128x8InstructionMemory:instructionMemory"
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 17. Port Connectivity Checks: "AlvarezPajaro_32bit2to1Multiplexer:mux7"
+ 18. Port Connectivity Checks: "AlvarezPajaro_32bitAdder:adder2"
+ 19. Port Connectivity Checks: "AlvarezPajaro_32bitAdder:adder1"
+ 20. Port Connectivity Checks: "AlvarezPajaro_5bit2to1Multiplexer:mux2"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -54,13 +53,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 12 17:51:12 2017           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 12 20:27:37 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; SingleCycleCPU                                  ;
 ; Top-level Entity Name              ; AlvarezPajaro_singleCycleCPUTest                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 11,529                                          ;
-;     Total combinational functions  ; 7,625                                           ;
+; Total logic elements               ; 11,524                                          ;
+;     Total combinational functions  ; 7,588                                           ;
 ;     Dedicated logic registers      ; 4,125                                           ;
 ; Total registers                    ; 4125                                            ;
 ; Total pins                         ; 80                                              ;
@@ -214,16 +213,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------------------------+
 ; Resource                                    ; Usage                             ;
 +---------------------------------------------+-----------------------------------+
-; Estimated Total logic elements              ; 11,529                            ;
+; Estimated Total logic elements              ; 11,524                            ;
 ;                                             ;                                   ;
-; Total combinational functions               ; 7625                              ;
+; Total combinational functions               ; 7588                              ;
 ; Logic element usage by number of LUT inputs ;                                   ;
-;     -- 4 input functions                    ; 5211                              ;
-;     -- 3 input functions                    ; 2189                              ;
+;     -- 4 input functions                    ; 5173                              ;
+;     -- 3 input functions                    ; 2190                              ;
 ;     -- <=2 input functions                  ; 225                               ;
 ;                                             ;                                   ;
 ; Logic elements by mode                      ;                                   ;
-;     -- normal mode                          ; 6180                              ;
+;     -- normal mode                          ; 6143                              ;
 ;     -- arithmetic mode                      ; 1445                              ;
 ;                                             ;                                   ;
 ; Total registers                             ; 4125                              ;
@@ -234,7 +233,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 8                                 ;
 ; Maximum fan-out node                        ; AlvarezPajaro_1HzClock2:clock|clk ;
 ; Maximum fan-out                             ; 4074                              ;
-; Total fan-out                               ; 40247                             ;
+; Total fan-out                               ; 40086                             ;
 ; Average fan-out                             ; 3.40                              ;
 +---------------------------------------------+-----------------------------------+
 
@@ -244,18 +243,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                       ; Library Name ;
 +-------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |AlvarezPajaro_singleCycleCPUTest                           ; 7625 (91)         ; 4125 (0)     ; 0           ; 8            ; 0       ; 4         ; 80   ; 0            ; |AlvarezPajaro_singleCycleCPUTest                                                                                                                                         ; work         ;
+; |AlvarezPajaro_singleCycleCPUTest                           ; 7588 (51)         ; 4125 (0)     ; 0           ; 8            ; 0       ; 4         ; 80   ; 0            ; |AlvarezPajaro_singleCycleCPUTest                                                                                                                                         ; work         ;
 ;    |AlvarezPajaro_128x8InstructionMemory:instructionMemory| ; 747 (747)         ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_128x8InstructionMemory:instructionMemory                                                                                  ; work         ;
 ;    |AlvarezPajaro_1HzClock2:clock|                          ; 51 (51)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_1HzClock2:clock                                                                                                           ; work         ;
-;    |AlvarezPajaro_256x8DataMemory:dataMemory|               ; 1461 (1461)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_256x8DataMemory:dataMemory                                                                                                ; work         ;
-;    |AlvarezPajaro_32bit2to1Multiplexer:mux2|                ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux2                                                                                                 ; work         ;
-;    |AlvarezPajaro_32bit2to1Multiplexer:mux6|                ; 54 (54)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux6                                                                                                 ; work         ;
-;    |AlvarezPajaro_32bit2to1Multiplexer:mux8|                ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux8                                                                                                 ; work         ;
+;    |AlvarezPajaro_256x8DataMemory:dataMemory|               ; 1462 (1462)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_256x8DataMemory:dataMemory                                                                                                ; work         ;
+;    |AlvarezPajaro_32bit2to1Multiplexer:mux3|                ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux3                                                                                                 ; work         ;
+;    |AlvarezPajaro_32bit2to1Multiplexer:mux5|                ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux5                                                                                                 ; work         ;
+;    |AlvarezPajaro_32bit2to1Multiplexer:mux8|                ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux8                                                                                                 ; work         ;
 ;    |AlvarezPajaro_32bit2to1Multiplexer:mux9|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux9                                                                                                 ; work         ;
 ;    |AlvarezPajaro_32bitAdder:adder1|                        ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bitAdder:adder1                                                                                                         ; work         ;
 ;    |AlvarezPajaro_32bitAdder:adder2|                        ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bitAdder:adder2                                                                                                         ; work         ;
-;    |AlvarezPajaro_3PortRegisterFile3:registerFile|          ; 1331 (1331)       ; 960 (960)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_3PortRegisterFile3:registerFile                                                                                           ; work         ;
-;    |AlvarezPajaro_5bit2to1Multiplexer:mux7|                 ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_5bit2to1Multiplexer:mux7                                                                                                  ; work         ;
+;    |AlvarezPajaro_3PortRegisterFile3:registerFile|          ; 1330 (1330)       ; 960 (960)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_3PortRegisterFile3:registerFile                                                                                           ; work         ;
+;    |AlvarezPajaro_5bit2to1Multiplexer:mux2|                 ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_5bit2to1Multiplexer:mux2                                                                                                  ; work         ;
 ;    |AlvarezPajaro_ALU:alu|                                  ; 3608 (1116)       ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu                                                                                                                   ; work         ;
 ;       |lpm_divide:Div0|                                     ; 1224 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_divide:Div0                                                                                                   ; work         ;
 ;          |lpm_divide_nto:auto_generated|                    ; 1224 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_divide:Div0|lpm_divide_nto:auto_generated                                                                     ; work         ;
@@ -272,7 +271,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |lpm_mult:Mult0|                                      ; 92 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_mult:Mult0                                                                                                    ; work         ;
 ;          |mult_i1t:auto_generated|                          ; 92 (92)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|lpm_mult:Mult0|mult_i1t:auto_generated                                                                            ; work         ;
 ;    |AlvarezPajaro_ALUcontrol:aluControl|                    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALUcontrol:aluControl                                                                                                     ; work         ;
-;    |AlvarezPajaro_control:control|                          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_control:control                                                                                                           ; work         ;
+;    |AlvarezPajaro_control:control|                          ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_control:control                                                                                                           ; work         ;
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder1|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder1                                                                                        ; work         ;
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder2|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder2                                                                                        ; work         ;
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder3|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder3                                                                                        ; work         ;
@@ -281,7 +280,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder6|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder6                                                                                        ; work         ;
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder7|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder7                                                                                        ; work         ;
 ;    |AlvarezPajaro_hexadecimalDisplayDecoder:decoder8|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_hexadecimalDisplayDecoder:decoder8                                                                                        ; work         ;
-;    |AlvarezPajaro_programCounter:pc|                        ; 8 (8)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc                                                                                                         ; work         ;
+;    |AlvarezPajaro_programCounter:pc|                        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc                                                                                                         ; work         ;
 ;    |AlvarezPajaro_shiftRegister2:shiftRegister|             ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_shiftRegister2:shiftRegister                                                                                              ; work         ;
 +-------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -378,39 +377,39 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; AlvarezPajaro_ALUcontrol:aluControl|OPCODE[1]                          ; AlvarezPajaro_ALUcontrol:aluControl|Mux9                       ; yes                    ;
 ; AlvarezPajaro_ALUcontrol:aluControl|OPCODE[2]                          ; AlvarezPajaro_ALUcontrol:aluControl|Mux9                       ; yes                    ;
 ; AlvarezPajaro_ALUcontrol:aluControl|OPCODE[3]                          ; AlvarezPajaro_ALUcontrol:aluControl|Mux9                       ; yes                    ;
-; writeReadAddress[7]                                                    ; VCC                                                            ; yes                    ;
-; loadInstruction[1]                                                     ; START                                                          ; yes                    ;
-; writeAddress[0]                                                        ; START                                                          ; yes                    ;
-; writeAddress[1]                                                        ; START                                                          ; yes                    ;
-; writeAddress[2]                                                        ; START                                                          ; yes                    ;
-; writeAddress[3]                                                        ; START                                                          ; yes                    ;
-; writeAddress[4]                                                        ; START                                                          ; yes                    ;
-; writeAddress[5]                                                        ; START                                                          ; yes                    ;
-; writeAddress[6]                                                        ; START                                                          ; yes                    ;
-; loadInstruction[2]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[3]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[0]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[5]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[6]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[7]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[4]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[9]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[10]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[11]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[8]                                                     ; START                                                          ; yes                    ;
-; loadInstruction[13]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[14]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[15]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[12]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[17]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[18]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[19]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[16]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[21]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[22]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[23]                                                    ; START                                                          ; yes                    ;
-; loadInstruction[20]                                                    ; START                                                          ; yes                    ;
-; Number of user-specified and inferred latches = 172                    ;                                                                ;                        ;
+; AlvarezPajaro_ALU:alu|HI[31]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[31]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[1]                                            ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[1]                                            ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[0]                                            ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[0]                                            ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[17]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[17]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[18]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[18]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[19]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[19]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[20]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[20]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[21]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[21]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[22]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[22]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[23]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[23]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[24]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[24]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[25]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[25]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[26]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[26]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[27]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[27]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[28]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[28]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|HI[29]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; AlvarezPajaro_ALU:alu|LO[29]                                           ; AlvarezPajaro_ALU:alu|Mux44                                    ; yes                    ;
+; Number of user-specified and inferred latches = 132                    ;                                                                ;                        ;
 +------------------------------------------------------------------------+----------------------------------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -464,7 +463,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Total registers                              ; 4125  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 32    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 4032  ;
@@ -478,16 +477,16 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc|instructionAddress[0]          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc|instructionAddress[29]         ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc|instructionAddress[5]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux8|O[27]                  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_5bit2to1Multiplexer:mux7|O[3]                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc|instructionAddress[31]         ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_programCounter:pc|instructionAddress[16]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_32bit2to1Multiplexer:mux5|O[11]                  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_5bit2to1Multiplexer:mux2|O[3]                    ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_3PortRegisterFile3:registerFile|Mux944           ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_3PortRegisterFile3:registerFile|Mux904           ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_128x8InstructionMemory:instructionMemory|Mux1050 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_128x8InstructionMemory:instructionMemory|Mux1055 ;
 ; 20:1               ; 14 bits   ; 182 LEs       ; 140 LEs              ; 42 LEs                 ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|Mux30                                    ;
-; 20:1               ; 14 bits   ; 182 LEs       ; 126 LEs              ; 56 LEs                 ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|Mux14                                    ;
-; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_256x8DataMemory:dataMemory|Mux2067               ;
+; 20:1               ; 14 bits   ; 182 LEs       ; 126 LEs              ; 56 LEs                 ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_ALU:alu|Mux15                                    ;
+; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |AlvarezPajaro_singleCycleCPUTest|AlvarezPajaro_256x8DataMemory:dataMemory|Mux2064               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
 
 
@@ -592,22 +591,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Port Connectivity Checks: "AlvarezPajaro_5bit2to1Multiplexer:mux7" ;
-+------+-------+----------+------------------------------------------+
-; Port ; Type  ; Severity ; Details                                  ;
-+------+-------+----------+------------------------------------------+
-; b    ; Input ; Info     ; Stuck at VCC                             ;
-+------+-------+----------+------------------------------------------+
-
-
 +---------------------------------------------------------------------+
-; Port Connectivity Checks: "AlvarezPajaro_32bit2to1Multiplexer:mux5" ;
-+---------+-------+----------+----------------------------------------+
-; Port    ; Type  ; Severity ; Details                                ;
-+---------+-------+----------+----------------------------------------+
-; b[1..0] ; Input ; Info     ; Stuck at GND                           ;
-+---------+-------+----------+----------------------------------------+
+; Port Connectivity Checks: "AlvarezPajaro_32bit2to1Multiplexer:mux7" ;
++-----------+-------+----------+--------------------------------------+
+; Port      ; Type  ; Severity ; Details                              ;
++-----------+-------+----------+--------------------------------------+
+; b[31..28] ; Input ; Info     ; Stuck at GND                         ;
+; b[1..0]   ; Input ; Info     ; Stuck at GND                         ;
++-----------+-------+----------+--------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -629,13 +620,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+-------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "AlvarezPajaro_128x8InstructionMemory:instructionMemory" ;
-+------------------+-------+----------+----------------------------------------------+
-; Port             ; Type  ; Severity ; Details                                      ;
-+------------------+-------+----------+----------------------------------------------+
-; wraddress[31..7] ; Input ; Info     ; Stuck at GND                                 ;
-+------------------+-------+----------+----------------------------------------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "AlvarezPajaro_5bit2to1Multiplexer:mux2" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                             ;
++------+-------+----------+------------------------------------------+
 
 
 +-------------------------------+
@@ -643,7 +634,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:58     ;
+; Top            ; 00:01:41     ;
 +----------------+--------------+
 
 
@@ -653,7 +644,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri May 12 17:48:47 2017
+    Info: Processing started: Fri May 12 20:25:33 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SingleCycleCPU -c SingleCycleCPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/vical/desktop/computer_organization_labs/lab8/single_cycle_cpu/alvarezpajaro_singlecyclecputest.vhd
@@ -701,250 +692,75 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: AlvarezPajaro_32bitAdder-behavior
     Info (12023): Found entity 1: AlvarezPajaro_32bitAdder
 Info (12127): Elaborating entity "AlvarezPajaro_singleCycleCPUTest" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(132): signal "loadMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(133): signal "loadMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(135): signal "WREN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(139): signal "WREN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(143): signal "memoryWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(144): signal "readData2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "offset", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "writeAddress", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "writeReadAddress", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "loadData", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "loadInstruction", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "writeInstructionMemory", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_singleCycleCPUTest.vhd(126): inferring latch(es) for signal or variable "writeDataMemory", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "writeDataMemory" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeInstructionMemory" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[0]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[1]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[2]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[3]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[4]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[5]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[6]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[7]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[8]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[9]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[10]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[11]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[12]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[13]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[14]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[15]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[16]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[17]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[18]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[19]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[20]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[21]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[22]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[23]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[24]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[25]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[26]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[27]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[28]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[29]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[30]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadInstruction[31]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[0]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[1]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[2]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[3]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[4]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[5]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[6]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[7]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[8]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[9]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[10]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[11]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[12]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[13]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[14]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[15]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[16]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[17]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[18]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[19]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[20]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[21]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[22]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[23]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[24]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[25]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[26]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[27]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[28]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[29]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[30]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "loadData[31]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[0]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[1]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[2]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[3]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[4]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[5]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[6]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[7]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[8]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[9]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[10]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[11]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[12]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[13]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[14]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[15]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[16]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[17]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[18]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[19]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[20]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[21]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[22]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[23]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[24]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[25]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[26]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[27]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[28]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[29]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[30]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeReadAddress[31]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[0]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[1]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[2]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[3]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[4]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[5]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[6]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[7]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[8]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[9]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[10]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[11]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[12]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[13]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[14]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[15]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[16]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[17]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[18]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[19]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[20]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[21]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[22]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[23]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[24]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[25]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[26]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[27]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[28]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[29]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[30]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "writeAddress[31]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[0]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[1]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[2]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[3]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[4]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[5]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[6]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[7]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[8]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[9]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[10]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[11]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[12]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[13]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[14]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[15]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[16]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[17]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[18]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[19]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[20]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[21]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[22]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[23]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[24]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[25]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[26]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[27]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[28]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[29]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[30]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
-Info (10041): Inferred latch for "offset[31]" at AlvarezPajaro_singleCycleCPUTest.vhd(126)
 Info (12128): Elaborating entity "AlvarezPajaro_1HzClock2" for hierarchy "AlvarezPajaro_1HzClock2:clock"
 Info (12128): Elaborating entity "AlvarezPajaro_shiftRegister2" for hierarchy "AlvarezPajaro_shiftRegister2:shiftRegister"
 Info (12128): Elaborating entity "AlvarezPajaro_programCounter" for hierarchy "AlvarezPajaro_programCounter:pc"
 Info (12128): Elaborating entity "AlvarezPajaro_128x8InstructionMemory" for hierarchy "AlvarezPajaro_128x8InstructionMemory:instructionMemory"
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(229): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(232): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(235): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(238): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(241): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(244): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(247): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(250): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(253): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(256): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(259): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(262): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(265): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(268): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(271): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(274): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(277): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(280): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(283): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(286): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(289): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(292): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(295): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(298): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(301): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(304): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(307): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(310): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(313): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(316): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(319): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(322): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(225): inferring latch(es) for signal or variable "INSTRUCTION", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "INSTRUCTION[0]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[1]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[2]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[3]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[4]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[5]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[6]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[7]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[8]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[9]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[10]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[11]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[12]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[13]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[14]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[15]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[16]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[17]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[18]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[19]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[20]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[21]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[22]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[23]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[24]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[25]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[26]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[27]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[28]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[29]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[30]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
-Info (10041): Inferred latch for "INSTRUCTION[31]" at AlvarezPajaro_128x8InstructionMemory.vhd(225)
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(230): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(233): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(236): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(239): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(242): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(245): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(248): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(251): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(254): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(257): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(260): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(263): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(266): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(269): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(272): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(275): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(278): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(281): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(284): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(287): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(290): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(293): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(296): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(299): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(302): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(305): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(308): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(311): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(314): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(317): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(320): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(323): signal "instructionMemory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at AlvarezPajaro_128x8InstructionMemory.vhd(226): inferring latch(es) for signal or variable "INSTRUCTION", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "INSTRUCTION[0]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[1]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[2]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[3]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[4]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[5]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[6]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[7]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[8]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[9]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[10]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[11]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[12]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[13]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[14]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[15]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[16]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[17]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[18]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[19]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[20]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[21]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[22]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[23]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[24]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[25]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[26]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[27]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[28]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[29]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[30]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
+Info (10041): Inferred latch for "INSTRUCTION[31]" at AlvarezPajaro_128x8InstructionMemory.vhd(226)
 Info (12128): Elaborating entity "AlvarezPajaro_5bit2to1Multiplexer" for hierarchy "AlvarezPajaro_5bit2to1Multiplexer:mux1"
 Warning (10631): VHDL Process Statement warning at AlvarezPajaro_5bit2to1Multiplexer.vhd(18): inferring latch(es) for signal or variable "O", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "O[0]" at AlvarezPajaro_5bit2to1Multiplexer.vhd(18)
@@ -1017,7 +833,7 @@ Warning (10492): VHDL Process Statement warning at AlvarezPajaro_3PortRegisterFi
 Warning (10492): VHDL Process Statement warning at AlvarezPajaro_3PortRegisterFile3.vhd(224): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at AlvarezPajaro_3PortRegisterFile3.vhd(226): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at AlvarezPajaro_3PortRegisterFile3.vhd(228): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "AlvarezPajaro_32bit2to1Multiplexer" for hierarchy "AlvarezPajaro_32bit2to1Multiplexer:mux2"
+Info (12128): Elaborating entity "AlvarezPajaro_32bit2to1Multiplexer" for hierarchy "AlvarezPajaro_32bit2to1Multiplexer:mux3"
 Warning (10631): VHDL Process Statement warning at AlvarezPajaro_32bit2to1Multiplexer.vhd(18): inferring latch(es) for signal or variable "O", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "O[0]" at AlvarezPajaro_32bit2to1Multiplexer.vhd(18)
 Info (10041): Inferred latch for "O[1]" at AlvarezPajaro_32bit2to1Multiplexer.vhd(18)
@@ -1485,15 +1301,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "WRDATA"
-Info (21057): Implemented 11779 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11740 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 11691 logic cells
+    Info (21061): Implemented 11652 logic cells
     Info (21062): Implemented 8 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 388 warnings
-    Info: Peak virtual memory: 681 megabytes
-    Info: Processing ended: Fri May 12 17:51:13 2017
-    Info: Elapsed time: 00:02:26
-    Info: Total CPU time (on all processors): 00:02:23
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 375 warnings
+    Info: Peak virtual memory: 661 megabytes
+    Info: Processing ended: Fri May 12 20:27:38 2017
+    Info: Elapsed time: 00:02:05
+    Info: Total CPU time (on all processors): 00:02:04
 
 

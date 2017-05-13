@@ -3,68 +3,68 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'AlvarezPajaro_1HzClock2:clock|clk'
-Slack : -150.849
-TNS   : -444445.134
+Slack : -152.806
+TNS   : -442243.479
 
 Type  : Slow Model Setup 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -144.922
-TNS   : -12922.212
+Slack : -146.231
+TNS   : -13204.980
 
 Type  : Slow Model Setup 'AlvarezPajaro_programCounter:pc|instructionAddress[0]'
-Slack : -12.112
-TNS   : -296.697
-
-Type  : Slow Model Setup 'START'
-Slack : -6.149
-TNS   : -171.117
+Slack : -9.816
+TNS   : -248.904
 
 Type  : Slow Model Setup 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -4.744
-TNS   : -131.953
+Slack : -5.355
+TNS   : -151.852
+
+Type  : Slow Model Setup 'START'
+Slack : -3.525
+TNS   : -82.561
 
 Type  : Slow Model Setup 'CLK'
-Slack : -3.260
-TNS   : -65.549
+Slack : -3.240
+TNS   : -65.660
 
 Type  : Slow Model Setup 'SHIFT'
-Slack : -3.189
-TNS   : -22.714
+Slack : -2.174
+TNS   : -12.295
 
 Type  : Slow Model Hold 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -136.559
-TNS   : -4363.561
-
-Type  : Slow Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -6.360
-TNS   : -246.243
-
-Type  : Slow Model Hold 'CLK'
-Slack : -2.508
-TNS   : -2.508
+Slack : -141.210
+TNS   : -4463.833
 
 Type  : Slow Model Hold 'START'
-Slack : -1.409
-TNS   : -32.153
+Slack : -9.445
+TNS   : -235.567
+
+Type  : Slow Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -7.981
+TNS   : -305.062
 
 Type  : Slow Model Hold 'AlvarezPajaro_1HzClock2:clock|clk'
-Slack : -1.308
-TNS   : -3.628
+Slack : -3.226
+TNS   : -11.845
+
+Type  : Slow Model Hold 'CLK'
+Slack : -2.537
+TNS   : -2.537
 
 Type  : Slow Model Hold 'SHIFT'
-Slack : 0.531
+Slack : 0.524
 TNS   : 0.000
 
 Type  : Slow Model Hold 'AlvarezPajaro_programCounter:pc|instructionAddress[0]'
-Slack : 2.868
+Slack : 1.894
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -134.524
-TNS   : -1210587.050
+Slack : -133.070
+TNS   : -1263410.048
 
 Type  : Slow Model Minimum Pulse Width 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -5.859
-TNS   : -856.198
+Slack : -3.140
+TNS   : -459.120
 
 Type  : Slow Model Minimum Pulse Width 'CLK'
 Slack : -1.380
@@ -87,68 +87,64 @@ Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast Model Setup 'AlvarezPajaro_1HzClock2:clock|clk'
-Slack : -67.782
-TNS   : -198993.746
+Slack : -68.598
+TNS   : -197791.413
 
 Type  : Fast Model Setup 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -65.346
-TNS   : -5788.661
+Slack : -65.911
+TNS   : -5949.122
 
 Type  : Fast Model Setup 'AlvarezPajaro_programCounter:pc|instructionAddress[0]'
-Slack : -5.788
-TNS   : -139.166
-
-Type  : Fast Model Setup 'START'
-Slack : -2.170
-TNS   : -54.681
+Slack : -4.542
+TNS   : -115.861
 
 Type  : Fast Model Setup 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -1.576
-TNS   : -40.494
+Slack : -2.729
+TNS   : -77.237
 
-Type  : Fast Model Setup 'SHIFT'
-Slack : -1.282
-TNS   : -7.567
+Type  : Fast Model Setup 'START'
+Slack : -1.015
+TNS   : -19.837
 
 Type  : Fast Model Setup 'CLK'
-Slack : -1.022
-TNS   : -15.357
+Slack : -1.015
+TNS   : -15.360
+
+Type  : Fast Model Setup 'SHIFT'
+Slack : -0.711
+TNS   : -3.239
 
 Type  : Fast Model Hold 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -61.868
-TNS   : -1976.060
-
-Type  : Fast Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -2.817
-TNS   : -127.592
-
-Type  : Fast Model Hold 'CLK'
-Slack : -1.551
-TNS   : -1.551
-
-Type  : Fast Model Hold 'AlvarezPajaro_1HzClock2:clock|clk'
-Slack : -1.004
-TNS   : -7.981
+Slack : -64.180
+TNS   : -2022.330
 
 Type  : Fast Model Hold 'START'
-Slack : -0.166
-TNS   : -1.642
+Slack : -5.495
+TNS   : -140.833
+
+Type  : Fast Model Hold 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -3.878
+TNS   : -158.794
+
+Type  : Fast Model Hold 'AlvarezPajaro_1HzClock2:clock|clk'
+Slack : -1.839
+TNS   : -8.646
+
+Type  : Fast Model Hold 'CLK'
+Slack : -1.580
+TNS   : -1.580
 
 Type  : Fast Model Hold 'SHIFT'
-Slack : 0.248
+Slack : 0.240
 TNS   : 0.000
 
 Type  : Fast Model Hold 'AlvarezPajaro_programCounter:pc|instructionAddress[0]'
-Slack : 1.664
+Slack : 1.150
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_128x8InstructionMemory:instructionMemory|INSTRUCTION[0]'
-Slack : -60.844
-TNS   : -536075.244
-
-Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
-Slack : -2.470
-TNS   : -360.620
+Slack : -59.888
+TNS   : -558507.860
 
 Type  : Fast Model Minimum Pulse Width 'CLK'
 Slack : -1.380
@@ -161,6 +157,10 @@ TNS   : -25.222
 Type  : Fast Model Minimum Pulse Width 'START'
 Slack : -1.222
 TNS   : -1.222
+
+Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_ALUcontrol:aluControl|OPCODE[0]'
+Slack : -1.148
+TNS   : -167.608
 
 Type  : Fast Model Minimum Pulse Width 'AlvarezPajaro_1HzClock2:clock|clk'
 Slack : -0.500
